@@ -10,7 +10,9 @@ export type Country = {
 
 export type Weather = {
     name: string
-    temp : number
-    temp_max :  number
-    temp_min : number
+    main: {
+        temp : number
+        temp_max :  number
+        temp_min : number
+    }
 }
