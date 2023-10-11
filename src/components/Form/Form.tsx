@@ -1,34 +1,56 @@
+import { ChangeEvent, useState } from "react";
+import type { SearchType } from "../../types";
 import { countries } from "../../data/countries";
 import styles from './Form.module.css'
 
 export default function Form() {
-  return (
-    <form className={styles.form}>
 
-        <div className={styles.field}>
-            <label htmlFor="city">Ciudad:</label>
-            <input
-                id="city"
-                type="text"
-                name="city"
-                placeholder="Ciudad"
-            />
-        </div>
+    const [search, setSearch] = useState<SearchType>({
+        city: '',
+        country: ''
+    })
 
-        <div className={styles.field}>
-            <label htmlFor="city">País:</label>
-            <select>
-                <option value="">-- Seleccione un País ---</option>
-                {countries.map( country => (
-                    <option
-                        key={country.code}
-                        value={country.code}
-                    >{country.name}</option>
-                ))}
-            </select>
-        </div>
+    const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
+        setSearch({
+            ...search,
+            [e.target.name] : e.target.value
+        })
+    }
 
-        <input className={styles.submit} type="submit" value='Consultar Clima' />
-    </form>
-  )
+    return (
+        <form className={styles.form}>
+
+            <div className={styles.field}>
+                <label htmlFor="city">Ciudad:</label>
+                <input
+                    id="city"
+                    type="text"
+                    name="city"
+                    placeholder="Ciudad"
+                    value={search.city}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className={styles.field}>
+                <label htmlFor="country">País:</label>
+                <select
+                    id="country"
+                    name="country"
+                    value={search.country}
+                    onChange={handleChange}
+                >
+                    <option value="">-- Seleccione un País ---</option>
+                    {countries.map( country => (
+                        <option
+                            key={country.code}
+                            value={country.code}
+                        >{country.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            <input className={styles.submit} type="submit" value='Consultar Clima' />
+        </form>
+    )
 }
