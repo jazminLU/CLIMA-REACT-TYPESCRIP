@@ -1,6 +1,6 @@
 :root {
   --white : #FFF;
-  --primary: #F59E0B;
+  --primary: #1f242d;
 }
 html {
   font-size: 62.5%;
@@ -14,3 +14,22 @@ body {
   color: var(--white);
   font-size: 2rem;
 }
+/* Estilos básicos para el botón */
+input {
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  border: 2px solid #707070; /* Borde gris */
+  background-color: #F0F0F0; /* Fondo gris claro */
+  color: #707070; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para cuando el cursor pasa sobre el botón */
+input:hover {
+  background-color: #C0C0C0; /* Fondo gris más claro */
+  color: #000; /* Color del texto más oscuro */
+  border-color: #000; /* Borde gris oscuro */
+}
+

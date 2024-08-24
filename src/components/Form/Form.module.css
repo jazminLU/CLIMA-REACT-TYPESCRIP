@@ -18,6 +18,15 @@
 .field ::placeholder {
     color: var(--white);
 }
+.form input[type="text"]:hover,
+.form select:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo más visible cuando se pasa el cursor */
+    border-color: rgba(255, 255, 255, 0.8); /* Borde más visible cuando se pasa el cursor */
+}
+.form select option {
+    color: #333; /* Color del texto de las opciones */
+    
+}
 
 .submit {
     background-color: var(--primary);
