@@ -24,3 +24,22 @@
 .temperatures span {
     font-weight: 400;
 }
+
+
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .container {
+        padding: 2rem; /* Aumenta el padding para más espacio interno en móviles */
+        margin-top: 5rem; /* Aumenta el margen superior para que esté más abajo en móviles */
+    }
+
+    .current {
+        font-size: 4rem; /* Reduce el tamaño de la fuente para adaptarse mejor a pantallas pequeñas */
+    }
+
+    .temperatures {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna en móviles */
+        gap: 1rem; /* Reduce el espacio entre los elementos */
+    }
+}
